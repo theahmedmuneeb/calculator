@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Calculator</title>
+</head>
+<body class="bg-gray-100">
+    <div class="flex flex-col md:flex-row items-center justify-center">
+        <div class="w-full md:w-1/2 p-4">
+            <h2 class="text-3xl font-bold text-center">Cost Savings Calculator</h2>
+            <div class="flex">
+                <div class="w-1/2 p-4">
+                  <!-- Target Fields -->
+                  <div class="max-w-md mx-auto mt-6">
+                    <form class="md:ml-4 md:mr-4">
+                      <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="input_t1">
+                        &nbsp;Width [in]
+                        </label>
+                        <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="input_t1" type="number" min="0">
+                      </div>
+                      <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="input_t2">
+                          &nbsp;Mil Thickness
+                        </label>
+                        <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="input_t2" type="number" min="0">
+                      </div>
+                  
+                      <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="input_t3">
+                         &nbsp;Distance [ft]
+                        </label>
+                        <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="input_t3" type="number" min="0">
+                      </div>
+                  
+                      <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-medium mb-2" for="input_t4">
+                         &nbsp;Cost per Pound
+                        </label>
+                        <div class="relative mt-2 rounded-md shadow-sm">
+                            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                              <span class="text-gray-500 sm:text-sm">$</span>
+                            </div>
+                            <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100 pl-7" id="input_t4" type="number" min="0">
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                  
+                </div>
+                <div class="w-1/2 p-4">
+                  <!-- Actual Fields -->
+                  <div class="max-w-md mx-auto mt-6">
+                    <form class="md:ml-4 md:mr-4">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="input_a1">
+                            &nbsp;Width [in]
+                            </label>
+                            <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="input_a1" type="number" min="0">
+                          </div>
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="input_a2">
+                              &nbsp;Mil Thickness
+                            </label>
+                            <input class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="input_a2" type="number" min="0">
+                          </div>
+                      
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="input_a3">
+                             &nbsp;Distance [ft]
+                            </label>
+                            <input class="appearance-none rounded-lg w-full py-2 px-3 text-gray-700 leading-tight" id="input_a3" type="number" min="0" disabled>
+                          </div>
+                      
+                          <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="input_a4">
+                             &nbsp;Cost per Pound
+                            </label>
+                            <div class="relative mt-2 rounded-md shadow-sm">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                  <span class="text-gray-500 sm:text-sm">$</span>
+                                </div>
+                                <input class="appearance-none rounded-lg w-full py-2 px-3 text-gray-700 leading-tight pl-7" id="input_a4" type="number" min="0" disabled>
+                              </div>
+                          </div>
+
+
+
+                   
+                    
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 p-4 items-center justify-center">
+            <div class="flex text-center">
+                <div class="w-1/2 p-4">
+                    <div class="mb-3"><span class="text-lg font-extrabold text-green-600">Target</span></div>                
+                  <!-- Target Data -->
+                  <div class="target_data">
+                    <div class="mb-2">
+                    <p class="text-3xl font-extrabold text-gray-700 t_area_in">0</p>
+                    <p class="text-sm text-gray-800">Area [in]</p>
+                  </div>
+                  <div class="mb-2">
+                    <p class="text-3xl font-extrabold text-gray-700 t_gpd">0</p>
+                    <p class="text-sm text-gray-800">Gallons per day</p>
+                  </div>
+                  <div class="mb-2">
+                    <p class="text-3xl font-extrabold text-gray-700 t_density">16.8</p>
+                    <p class="text-sm text-gray-800">Density</p>
+                  </div>
+                  <div class="mb-2">
+                    <p class="text-3xl font-extrabold text-gray-700 t_cpd">0</p>
+                    <p class="text-sm text-gray-800">Cost Per Day</p>
+                  </div>
+                </div>
+                </div>
+                <div class="w-1/2 p-4">
+                    <div class="mb-3"><span class="text-lg font-extrabold text-red-600">Actual</span></div>   
+                    <!-- Actual Data -->
+                    <div class="actual_data">
+                        <div class="mb-2">
+                        <p class="text-3xl font-extrabold text-gray-700 a_area_in">0</p>
+                        <p class="text-sm text-gray-800">Area [in]</p>
+                      </div>
+                      <div class="mb-2">
+                        <p class="text-3xl font-extrabold text-gray-700 a_gpd">0</p>
+                        <p class="text-sm text-gray-800">Gallons per day</p>
+                      </div>
+                      <div class="mb-2">
+                        <p class="text-3xl font-extrabold text-gray-700 a_density">16.8</p>
+                        <p class="text-sm text-gray-800">Density</p>
+                      </div>
+                      <div class="mb-2">
+                        <p class="text-3xl font-extrabold text-gray-700 a_cpd">0</p>
+                        <p class="text-sm text-gray-800">Cost Per Day</p>
+                      </div>
+                    </div>
+                    
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-6xl font-extrabold text-red-600 amcpd">
+Paisa
+                </p>
+                <p class="text-lg text-gray-900">Additional Material Cost Per Day</p>
+            </div>
+        </div>
+    </div>
+      <script src="assets/script.js"></script>
+</body>
+</html>
